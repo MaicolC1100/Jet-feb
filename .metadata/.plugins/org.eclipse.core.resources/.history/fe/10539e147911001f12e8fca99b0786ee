@@ -1,0 +1,8 @@
+package com.jetfeb.usuarios.servicio;
+
+import com.jetfeb.usuarios.servicio.PersonalBllServicio;
+
+public class PersonalBllServicioImpl implements PersonalBllServicio{
+
+	
+}

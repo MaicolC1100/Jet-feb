@@ -1,0 +1,5 @@
+package com.jetfeb.usuarios.repositorio;
+
+public interface PersonalBllRepositorio {
+
+}

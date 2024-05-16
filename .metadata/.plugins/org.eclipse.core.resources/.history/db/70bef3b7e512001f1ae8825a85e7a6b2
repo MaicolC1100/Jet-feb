@@ -1,0 +1,12 @@
+package com.jetfeb.usuarios.servicio;
+
+import java.util.List;
+
+import com.jetfeb.usuarios.modelo.PersonalBll ;
+
+public interface PersonalBllServicio {
+
+	public List<PersonalBll> listarTodoElPersonal();
+	
+	
+}

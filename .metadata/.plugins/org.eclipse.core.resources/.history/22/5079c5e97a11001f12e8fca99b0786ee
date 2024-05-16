@@ -1,0 +1,18 @@
+package com.jetfeb.usuarios.servicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.jetfeb.usuarios.modelo.PersonalBll;
+
+@Service
+public class PersonalBllServicioImpl implements PersonalBllServicio {
+
+    @Override
+    public List<PersonalBll> listarTodoElPersonal() {
+        return new ArrayList<>();
+    }
+
+}

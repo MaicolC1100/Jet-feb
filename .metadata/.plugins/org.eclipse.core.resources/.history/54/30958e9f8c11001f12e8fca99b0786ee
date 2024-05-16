@@ -1,0 +1,32 @@
+package com.jetfeb.usuarios.controlador;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import com.jetfeb.usuarios.modelo.PersonalBll;
+import com.jetfeb.usuarios.servicio.PersonalBllServicio;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class PersonalBllControlador {
+
+	@Autowired
+	private PersonalBllServicio servicio;
+	
+
+	 @GetMapping("/personal")
+	    public String mostrarPersonal(Model model) {
+	        // Obtener la lista de objetos PersonalBll desde el servicio
+	        List<PersonalBll> personalBllList = servicio.listarTodoElPersonal();
+	        
+	        // Agregar la lista al modelo de la vista
+	        model.addAttribute("personalBllList", personalBllList);
+	        
+	        // Devolver el nombre de la vista
+	        return "mostrar_personal";
+	    }
+	}

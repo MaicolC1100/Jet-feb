@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js is-mobile" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editar PersonalBellezaExpress</title>
+<!-- Importar Bootstrap CSS -->
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- Agregamos el archivo CSS externo -->
+<!-- Agrega la biblioteca de Font Awesome -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+	integrity="sha512-pwDGFESa9KOL5g7x7/FV2A8Jojw0KSD+N4qq+x5x1g2OJQm1lePdVjvl9S2FeV7a36csEYUQXu57hZUf9hlQ2Q=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- CSS de DataTables -->
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
+<style type="text/css">
+body {
+	background-color: rgb(245, 201, 0);
+	/* Establecer el color de fondo amarillo con transparencia */
+}
+
+.wrapper {
+	/* Establecer el tamaño del wrapper */
+	width: 100%;
+	min-height: 100vh; /* 100% de la altura del viewport */
+	/* Aplicar la imagen de fondo y configurarla para que se ajuste */
+	background-image:
+		url('https://img.freepik.com/vector-gratis/papel-pintado-abstracto-blanco_23-2148830026.jpg?w=1380&t=st=1713812475~exp=1713813075~hmac=b909c0d3ee3399ae3a9b211fa858c1fc5bcf0b87c10408967b8b6e1159d826cd');
+	background-size: cover;
+	/* Ajustar la imagen para cubrir todo el wrapper */
+	background-position: center; /* Centrar la imagen */
+	background-attachment: fixed;
+	/* Hacer que la imagen de fondo sea fija */
+}
+
+.custom-container {
+	margin-top: 20px; /* Espacio superior */
+}
+
+.navbar {
+	border: 5px solid #ced4da; /* Agrega un borde alrededor del menú */
+	border-radius: 10px; /* Añade bordes redondeados */
+	padding: 20px;
+	/* Agrega un relleno al menú para separar el contenido del borde */
+}
+
+.nav-link:hover {
+	text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+	/* Añade una sombra al texto cuando el mouse está sobre él */
+}
+
+/* Estilo para colorear las celdas de la primera fila */
+.yellow-cell {
+	background-color: rgba(255, 215, 0, 0.37); /* Amarillo */
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #333;
+	color: #fff;
+	padding: 50px 0;
+	text-align: center;
+}
+
+/* Estilos adicionales para dispositivos móviles */
+@media ( max-width : 767px) {
+	.custom-container .custom-box {
+		padding: 15px; /* Aumenta el padding en dispositivos móviles */
+	}
+	.col-md-1 {
+		width: 100%;
+		/* Cambia el ancho de la columna a 100% en dispositivos móviles */
+		text-align: center; /* Centra el contenido de la columna */
+	}
+}
+</style>
+</head>
+<body>
+	<br>
+
+	<header>
+		<div class="wrapper">
+			<header>
+				<div class="container">
+					<!-- Aquí se agrega el contenedor del menu -->
+					<nav class="navbar navbar-expand-lg navbar-light bg-black">
+						<div class="col-md-3">
+							<a class="navbar-brand" href="#"> <img
+								src="https://live.staticflickr.com/65535/53694045368_cfae25bcd5_n.jpg"
+								class="align-content-center" width="150" alt="">
+							</a>
+						</div>
+						<div class="row-cols-md-9">
+							<button class="navbar-toggler" type="button"
+								data-toggle="collapse" data-target="#navbarNav"
+								aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav ml-auto">
+									<li class="nav-item"><a class="nav-link" href="#">Inicio
+											<span class="sr-only">(current)</span>
+									</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Tarifa
+											Vales</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Asignacion
+											Vales</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Solicitud
+											Vale</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Parametrizar
+											Personal</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Historial</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+				<!-- Fin del contenedor -->
+			</header>
+			<br>
+
+			<div class="container">
+				<div class="row">
+					<div
+						class="col-lg-6 col-md-6 container justify-content-center card">
+						<h1 class="text-center">EDICION PERSONAL BELLEZA EXPRESS</h1>
+						<div class="card-body">
+							<form th:action="@{/personalBll/{id}(id=${personalbelleza.id})}" th:object="${personalbelleza}"	method="POST">
+								<div class="form-group">
+									<label>Cedula:</label> <input type="text" th:field="*{cedula}"
+										class="form-control" placeholder="Digite su cedula: ">
+								</div>
+								<div class="form-group">
+									<label>Nombre:</label> <input type="text" th:field="*{nombre}"
+										class="form-control" placeholder="Digite su nombre: ">
+								</div>
+								<div class="form-group">
+									<label>Gerencia:</label> <input type="text" th:field="*{Gerencia}"
+										class="form-control" placeholder="Digite su Gerencia: ">
+								</div>
+								<div class="form-group">
+									<label>Ctro_costo:</label> <input type="text" th:field="*{Ctro_costo}"
+										class="form-control" placeholder="Digite su Ctro_costo: ">
+								</div>
+								<div class="box-footer">
+									<button  class="btn btn-success">Guardar</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<br> <br>
+
+
+			<footer class="transport-footer" style="background-color: #333; color: #fff; padding: 20px 0; text-align: center;">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4">
+							<img
+								src="https://live.staticflickr.com/65535/53694045368_cfae25bcd5_n.jpg"
+								class="align-content-center" width="150" alt="">
+							<p style="margin-top: 10px; font-size: 14px; color: #fff;">©
+								2024 Todos los derechos reservados Tax Individual, ¡Para Usted!</p>
+						</div>
+						<div class="col-md-4">
+							<p>JET-FEB Juntos con eficiencia, Fidelidad, Excelencia,
+								Bienestar. Contantanos: (+57) 312-217-5757 o 3136503717</p>
+							<p>Nuestros servicios de transporte para: Viajeros
+								Conductores Empresas</p>
+						</div>
+						<div class="col-md-4">
+							<img
+								src="https://live.staticflickr.com/65535/53692947702_f00cbe1897_w.jpg"
+								class="align-content-center" width="150" alt="">
+							<p style="margin-top: 10px; font-size: 14px; color: #fff;">¡Nos
+								movemos por Cali y su gente de puro corazon!</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!--Cierra el wrapper-->
+		</div>
+	</header>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/e57f9b2fbc.js"
+		crossorigin="anonymous"></script>
+	<!-- JavaScript de jQuery (necesario para DataTables) -->
+	<script type="text/javascript" charset="utf8"
+		src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<!-- JavaScript de DataTables -->
+	<script type="text/javascript" charset="utf8"
+		src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+	<script>
+        $(document).ready(function() {
+            // Inicializamos DataTables con el ID correcto de la tabla
+            $('#personalTable').DataTable();
+        });
+    </script>
+</body>
+</html>

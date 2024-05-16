@@ -1,0 +1,23 @@
+package com.jetfeb.usuarios.controlador;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import com.jetfeb.usuarios.servicio.PersonalBllServicio;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class PersonalBllControlador {
+
+	@Autowired
+	private PersonalBllServicio servicio;
+	
+
+	@GetMapping({ "/personalBll", "/" })
+	public String listarPersonalBll(Model modelo) {
+		modelo.addAttribute("personal", servicio.listarTodoElPersonal());
+		return "personalBll"; // nos retorna al archivo PersonalBelleza
+	}
+
+}

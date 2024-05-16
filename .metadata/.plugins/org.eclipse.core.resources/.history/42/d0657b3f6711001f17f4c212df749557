@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(245, 201, 0); /* Establecer el color de fondo amarillo con transparencia */
+}
+
+.wrapper {
+    /* Establecer el tamaño del wrapper */
+    width: 100%;
+    min-height: 100vh; /* 100% de la altura del viewport */
+    /* Aplicar la imagen de fondo y configurarla para que se ajuste */
+    background-image: url('https://img.freepik.com/vector-gratis/papel-pintado-abstracto-blanco_23-2148830026.jpg?w=1380&t=st=1713812475~exp=1713813075~hmac=b909c0d3ee3399ae3a9b211fa858c1fc5bcf0b87c10408967b8b6e1159d826cd');
+    background-size: cover; /* Ajustar la imagen para cubrir todo el wrapper */
+    background-position: center; /* Centrar la imagen */
+    background-attachment: fixed; /* Hacer que la imagen de fondo sea fija */
+}
+
+
+.descripcion-servicios {
+    font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+}
+
+/* Estilos adicionales para las imágenes del carrusel */
+#carouselExample .carousel-item img {
+    max-width: 100%; /* Ancho máximo del 100% */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+.custom-container {
+    margin-top: 20px; /* Espacio superior */
+}
+
+.navbar {
+    border: 5px solid #ced4da; /* Agrega un borde alrededor del menú */
+    border-radius: 10px; /* Añade bordes redondeados */
+    padding: 20px; /* Agrega un relleno al menú para separar el contenido del borde */
+}
+
+.nav-link:hover {
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); /* Añade una sombra al texto cuando el mouse está sobre él */
+}
+
+.custom-container .custom-box {
+    background-color: rgba(255, 215, 0, 0.38);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.custom-box h2 {
+    margin-bottom: 10px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Estilos adicionales para dispositivos móviles */
+@media (max-width: 767px) {
+    .custom-container .custom-box {
+        padding: 15px; /* Aumenta el padding en dispositivos móviles */
+    }
+    .col-md-1 {
+        width: 100%; /* Cambia el ancho de la columna a 100% en dispositivos móviles */
+        text-align: center; /* Centra el contenido de la columna */
+    }
+
+}

@@ -1,0 +1,22 @@
+package com.jetfeb.usuarios;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.jetfeb.usuarios.modelo.PersonalBll;
+
+@SpringBootApplication
+public class RegistroUsuariosSpringSecurityApplication implements CommandLineRunner{
+
+	public static void main(String[] args) {
+		SpringApplication.run(RegistroUsuariosSpringSecurityApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		PersonalBll personal1 = new PersonalBll("1234190100","Maicol Cifuentes","Comercial","01651651");
+		
+	}
+
+}

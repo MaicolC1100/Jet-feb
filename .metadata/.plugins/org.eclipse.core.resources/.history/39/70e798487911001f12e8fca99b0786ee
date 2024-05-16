@@ -1,0 +1,21 @@
+package com.jetfeb.usuarios.servicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.jetfeb.usuarios.modelo.PersonalBll;
+
+@Service
+public class PersonalBllServicioImpl implements PersonalBllServicio {
+
+    @Override
+    public List<PersonalBll> listarTodoElPersonal() {
+        // Aquí deberías agregar la lógica para recuperar y devolver una lista de PersonalBll
+        // Por ejemplo, podrías acceder a una base de datos o a otro servicio que proporcione los datos
+        // Por ahora, simplemente retornaremos una lista vacía
+        return new ArrayList<>();
+    }
+
+}
