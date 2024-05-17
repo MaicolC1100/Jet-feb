@@ -11,9 +11,9 @@ public interface PersonalServicio {
 	
 	public Personal guardarPersonalBl(Personal personal);
 	
-	public Personal obtenerPersonalBllporId(Long id);
+	public Personal obtenerPersonalporId(Long id);
 	
-	public Personal actualizarPersonalBll(Personal personal);
+	public Personal actualizarPersonal(Personal personal);
 	
 	public void eliminarPersonalBll(Long id);
 	

@@ -35,14 +35,14 @@ public class PersonalControlador {
 
     @GetMapping("/personal/editar/{id}")
     public String mostrarFormularioDeEditar(@PathVariable Long id, Model modelo) {
-        modelo.addAttribute("personal", personalServicio.obtenerPersonalBllporId(id));
+        modelo.addAttribute("personal", personalServicio.obtenerPersonalporId(id));
         return "editar_personal";
     }
 
     @PostMapping("/personal/{id}")
     public String actualizarPersonal(@PathVariable Long id, @ModelAttribute("personal") Personal personal,
             Model modelo) {
-        Personal personalExistente = personalServicio.obtenerPersonalBllporId(id);
+        Personal personalExistente = personalServicio.obtenerPersonalporId(id);
         personalExistente.setId(id);
         personalExistente.setCedula(personal.getCedula());
         personalExistente.setPlaca(personal.getPlaca());
@@ -50,7 +50,7 @@ public class PersonalControlador {
         personalExistente.setCelular(personal.getCelular());
         personalExistente.setCorreo(personal.getCorreo());
 
-        personalServicio.actualizarPersonalBll(personalExistente);
+        personalServicio.actualizarPersonal(personalExistente);
         return "redirect:/personal";
     }
 

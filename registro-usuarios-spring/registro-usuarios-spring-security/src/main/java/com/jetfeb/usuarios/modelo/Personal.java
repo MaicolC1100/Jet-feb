@@ -15,6 +15,9 @@ public class Personal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @Column(name = "nombre", nullable = false, length = 50, unique = true)
+    private String nombre;
+    
     @Column(name = "cedula", nullable = false, length = 50, unique = true)
     private String cedula;
     
@@ -33,8 +36,9 @@ public class Personal {
     public Personal() {
     }
     
-    public Personal(Long id, String cedula, String placa, String cargo, String celular, String correo) {
+    public Personal(Long id, String nombre, String cedula, String placa, String cargo, String celular, String correo) {
         this.id = id;
+        this.nombre = nombre;
         this.cedula = cedula;
         this.placa = placa;
         this.cargo = cargo;
@@ -42,7 +46,8 @@ public class Personal {
         this.correo = correo;
     }
     
-    public Personal(String cedula, String placa, String cargo, String celular, String correo) {
+    public Personal(String nombre, String cedula, String placa, String cargo, String celular, String correo) {
+    	this.nombre = nombre;
         this.cedula = cedula;
         this.placa = placa;
         this.cargo = cargo;
@@ -57,8 +62,17 @@ public class Personal {
     public void setId(Long id) {
         this.id = id;
     }
+    
 
-    public String getCedula() {
+    public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getCedula() {
         return cedula;
     }
 

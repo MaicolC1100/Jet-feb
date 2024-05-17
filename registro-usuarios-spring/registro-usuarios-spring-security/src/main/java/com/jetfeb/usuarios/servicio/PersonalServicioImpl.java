@@ -25,12 +25,12 @@ public class PersonalServicioImpl implements PersonalServicio {
 	}
 
 	@Override
-	public Personal obtenerPersonalBllporId(Long id) {
+	public Personal obtenerPersonalporId(Long id) {
 		return repositorio.findById(id).get();
 	}
 
 	@Override
-	public Personal actualizarPersonalBll(Personal personalbll) {
+	public Personal actualizarPersonal(Personal personalbll) {
 		return repositorio.save(personalbll);
 	}
 
