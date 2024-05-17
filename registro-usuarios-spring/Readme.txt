@@ -1,5 +1,13 @@
 APLICATIVO MANEJO DE VALES
 
+Para despliegue del aplicativo se importa como un maven existing project
+maven update
+run: maven clean install
+Y se despliega desde el projecto con un 
+RUN AS:
+Spring boot APP
+
+
 CONFIGURADO CON JAVA 1.8 
 
 MAVEN 
