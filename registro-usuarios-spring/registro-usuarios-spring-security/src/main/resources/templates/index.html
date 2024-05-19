@@ -23,30 +23,25 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Tarifa Vales</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="@{/asignarVales}">Asignación Vales</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Solicitud Vale</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Parametrizar Personal</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Historial</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Cerrar Sesión</a>
-                            </li>
-                        </ul>
-                    </div>
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item"><a class="nav-link" href="#">Inicio<span
+									class="sr-only">(current)</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Tarifa
+									Vales</a></li>
+							<li class="nav-item"><a class="nav-link"
+								href="@{/asignarVales}">Asignación Vales</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Solicitud
+									Vale</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Parametrizar
+									Personal</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Historial</a>
+							</li>
+							<li sec:authorize="isAuthenticated()" class="nav-item"><a
+								th:href="@{/logout}" class="nav-link">Cerrar sesión</a></li>
+
+						</ul>
+
+					</div>
                 </div>
             </nav>
         </header>
